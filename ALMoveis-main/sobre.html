@@ -1,0 +1,994 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Mobile Web-app fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Meta tags -->
+    <meta name="description" content="Site venda de móveis">
+    <meta name="author" content="Leandro Rosa">
+    <!-- <link rel="icon" href="./favicon.ico"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+    <!--Title-->
+    <title>Komode Móveis | Sobre nós</title>
+
+    <!--CSS bundle -->
+    <link rel="stylesheet" media="all" href="css/bundle.min.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="page-loader"></div>
+
+    <div class="wrapper">
+
+        <div ><!-- ==================  Navigation (main menu) ================== -->
+            <script type="text/javascript">
+                $(function () {
+                    // Main navigation & mega menu
+                    // ----------------------------------------------------------------
+            
+                    // Global menu variables
+            
+                    var objSearch = $('.search-wrapper'),
+                        objLogin = $('.login-wrapper'),
+                        objCart = $('.cart-wrapper'),
+                        objMenu = $('.floating-menu'),
+                        objMenuLink = $('.floating-menu a'),
+                        $search = $('.open-search'),
+                        $login = $('.open-login'),
+                        $cart = $('.open-cart'),
+                        $menu = $('.open-menu'),
+                        $openDropdown = $('.open-dropdown'),
+                        $settingsItem = $('.nav-settings .nav-settings-list li'),
+                        $close = $('.close-menu');
+            
+                    // Open/close login
+            
+                    $login.on('click', function () {
+                        toggleOpen($(this));
+                        objLogin.toggleClass('open');
+                        closeSearch();
+                        closeCart();
+                    });
+            
+                    // Open/close search bar
+            
+                    $search.on('click', function () {
+                        toggleOpen($(this));
+                        objSearch.toggleClass('open');
+                        objSearch.find('input').focus();
+                        closeLogin();
+                        closeCart();
+                    });
+            
+                    // Open/close cart
+            
+                    $cart.on('click', function () {
+                        toggleOpen($(this));
+                        objCart.toggleClass('open');
+                        closeLogin();
+                        closeSearch();
+                    });
+            
+                    // Mobile menu open/close
+            
+                    $menu.on('click', function () {
+                        objMenu.addClass('expanded');
+                        closeSearch();
+                        closeLogin();
+                        closeCart();
+                    });
+            
+                    // Settings language & currency dropdown
+            
+                    $settingsItem.on('click', function () {
+                        var $value = $(this).closest('.nav-settings').find('.nav-settings-value');
+                        $value.text($(this).text());
+                    });
+            
+                    // Floating menu hyperlink
+                    if ($('nav').hasClass('navbar-single-page')) {
+                        objMenuLink.on('click', function () {
+                            objMenu.removeClass('expanded');
+                        });
+                    }
+            
+                    // Open dropdown/megamenu
+            
+                    $openDropdown.on('click', function (e) {
+            
+                        e.preventDefault();
+            
+                        var liParent = $(this).parent().parent(),
+                            liDropdown = liParent.find('.navbar-dropdown');
+            
+                        liParent.toggleClass('expanded');
+            
+                        if (liParent.hasClass('expanded')) {
+                            liDropdown.slideDown();
+                        }
+                        else {
+                            liDropdown.slideUp();
+                        }
+                    });
+            
+                    // Close menu (mobile)
+            
+                    $close.on('click', function () {
+                        $('nav').find('.expanded').removeClass('expanded');
+                        $('nav').find('.navbar-dropdown').slideUp();
+                    });
+            
+                    // Global functions
+            
+                    function toggleOpen(el) {
+                        $(el).toggleClass('open');
+                    }
+            
+                    function closeSearch() {
+                        objSearch.removeClass('open');
+                        $search.removeClass('open');
+                    }
+                    function closeLogin() {
+                        objLogin.removeClass('open');
+                        $login.removeClass('open');
+                    }
+                    function closeCart() {
+                        objCart.removeClass('open');
+                        $cart.removeClass('open');
+                    }
+            
+                    // Sticky header
+                    // ----------------------------------------------------------------
+            
+                    var navbarFixed = $('nav.navbar-fixed');
+            
+                    // When reload page - check if page has offset
+                    if ($(document).scrollTop() > 94) {
+                        navbarFixed.addClass('navbar-sticked');
+                    }
+                    // Add sticky menu on scroll
+                    $(document).on('bind ready scroll', function () {
+                        var docScroll = $(document).scrollTop();
+                        if (docScroll >= 10) {
+                            navbarFixed.addClass('navbar-sticked');
+                        } else {
+                            navbarFixed.removeClass('navbar-sticked');
+                        }
+                    });
+            
+                });
+            </script>
+            
+                    <!--Use class "navbar-fixed" or "navbar-default" -->
+                    <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
+            
+                    <!-- ======================== Navigation ======================== -->
+            
+                    <nav class="navbar-fixed">
+            
+                        <div class="container">
+            
+                            <!-- ==========  Top navigation ========== -->
+            
+                            <div class="navigation navigation-top clearfix">
+                                <ul>
+                                    <!--add active class for current page-->
+            
+                                    <li><a href="https://www.facebook.com/KomodeMoveis" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+                                    <li><a href=https://www.instagram.com/komodemd/ target="blank"><i class="fa fa-instagram"></i></a></li>
+
+                                    <!--Currency selector-->
+            
+                                    <li class="nav-settings">
+                                        <a href="javascript:void(0);" class="nav-settings-value"> BRL R$</a>
+                                        <ul class="nav-settings-list">
+                                            <li>USD $</li>
+                                            <li>BRL R$</li>
+                                            <li>CHF Fr.</li>
+                                            <li>GBP £</li>
+                                        </ul>
+                                    </li>
+            
+                                    <!--Language selector-->
+            
+                                    <li class="nav-settings">
+                                        <a href="javascript:void(0);" class="nav-settings-value"> PT-BR</a>
+                                        <ul class="nav-settings-list">
+                                            <li>PT-BR</li>
+                                            <li>GER</li>
+                                            <li>لعربية</li>
+                                            <li>עִבְרִית</li>
+                                        </ul>
+                                    </li>
+                                    </ul>
+                            </div> <!--/navigation-top-->
+            
+                            <!-- ==========  Main navigation ========== -->
+            
+                            <div class="navigation navigation-main">
+            
+                                <!-- Setup your logo here-->
+            
+                                <a href="index.html" class="altLogo logo"><img src="assets/images/logo.png" alt=""></a>
+            
+                                <!-- Mobile toggle menu -->
+            
+                                <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
+            
+                                <!-- Convertible menu (mobile/desktop)-->
+            
+                                <div class="floating-menu">
+            
+                                    <!-- Mobile toggle menu trigger-->
+            
+                                    <div class="close-menu-wrapper">
+                                        <span class="close-menu"><i class="icon icon-cross"></i></span>
+                                    </div>
+            
+                                    <ul>
+                                        <li><a href="index.html">Inicio</a></li>
+                                        
+   
+            
+                                        <!-- Furniture icons in dropdown-->
+            
+                                        <li>
+                                            <a href="categorias.html">Produtos <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                            <div class="navbar-dropdown">
+                                                <div class="navbar-box">
+            
+                                                    <!-- box-1 (left-side)-->
+            
+                                                    <div class="box-1">
+                                                        <div class="image">
+                                                            <img src="assets/images/blog-2.jpg" alt="Lorem ipsum">
+                                                        </div>
+                                                        <div class="box">
+                                                            <div class="h2">Qualidade e preço baixo</div>
+                                                            <div class="clearfix">
+                                                                <p>Móveis de qualidade com um preço que cabe no seu bolso você só encontra aqui na Komode Móveis</p>
+                                                                <a class="btn btn-clean btn-big" href="estoque.html">Explore</a>
+                                                            </div>
+                                                        </div>
+                                                    </div> <!--/box-1-->
+            
+                                                    <!-- box-2 (right-side)-->
+            
+                                                    <div class="box-2">
+                                                        <div class="clearfix categories">
+                                                            <div class="row">
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-sofa"></i>
+                                                                            <figcaption>Sofás</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-armchair"></i>
+                                                                            <figcaption>Armários</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-chair"></i>
+                                                                            <figcaption>Cadeiras</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-dining-table"></i>
+                                                                            <figcaption>Mesas de jantar</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-media-cabinet"></i>
+                                                                            <figcaption>Cômodas</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-table"></i>
+                                                                            <figcaption>Mesas</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-bookcase"></i>
+                                                                            <figcaption>Estante</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-bedroom"></i>
+                                                                            <figcaption>Quarto</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                              
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-kitchen"></i>
+                                                                            <figcaption>Cozinha</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                <!--icon item-->                                                
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-bathroom"></i>
+                                                                            <figcaption>Banheiro</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                          
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-office"></i>
+                                                                            <figcaption>Escritório</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                              
+            
+                                                                <div class="col-sm-3 col-xs-6">
+                                                                    <a href="estoque.html">
+                                                                        <figure>
+                                                                            <i class="f-icon f-icon-carpet"></i>
+                                                                            <figcaption>Tapetes</figcaption>
+                                                                        </figure>
+                                                                    </a>
+                                                                </div>
+                                                            </div> <!--/row-->
+                                                        </div> <!--/categories-->
+                                                    </div> <!--/box-2-->
+                                                </div> <!--/navbar-box-->
+                                            </div> <!--/navbar-dropdown-->
+                                        </li>
+           
+                                        <li><a href="sobre.html">Sobre nós</a></li>
+                                        <li><a href="contato.html">Contato</a></li>
+
+                                    </ul>
+                                </div> <!--/floating-menu-->
+                            </div> <!--/navigation-main-->
+            
+            
+                            <!-- ==========  Search wrapper ========== -->
+            
+                            <div class="search-wrapper">
+            
+                                <!-- Search form -->
+                                <input class="form-control" placeholder="Search...">
+                                <button class="btn btn-main btn-search">Go!</button>
+            
+                                <!-- Search results - live search -->
+                                <div class="search-results">
+                                    <div class="search-result-items">
+                                        <div class="title h4">Products <a href="#" class="btn btn-clean-dark btn-xs">View all</a></div>
+                                        <ul>
+                                            <li><a href="#"><span class="id">42563</span> <span class="name">Green corner</span> <span class="category">Sofa</span></a></li>
+                                            <li><a href="#"><span class="id">42563</span> <span class="name">Laura</span> <span class="category">Armchairs</span></a></li>
+                                            <li><a href="#"><span class="id">42563</span> <span class="name">Nude</span> <span class="category">Dining tables</span></a></li>
+                                            <li><a href="#"><span class="id">42563</span> <span class="name">Aurora</span> <span class="category">Nightstands</span></a></li>
+                                            <li><a href="#"><span class="id">42563</span> <span class="name">Dining set</span> <span class="category">Kitchen</span></a></li>
+                                            <li><a href="#"><span class="id">42563</span> <span class="name">Seat chair</span> <span class="category">Bar sets</span></a></li>
+                                        </ul>
+                                    </div> <!--/search-result-items-->
+                                    <div class="search-result-items">
+                                        <div class="title h4">Blog <a href="#" class="btn btn-clean-dark btn-xs">View all</a></div>
+                                        <ul>
+                                            <li><a href="#"><span class="id">01 Jan</span> <span class="name">Creating the Perfect Gallery Wall </span> <span class="category">Interior ideas</span></a></li>
+                                            <li><a href="#"><span class="id">12 Jan</span> <span class="name">Making the Most Out of Your Kids Old Bedroom</span> <span class="category">Interior ideas</span></a></li>
+                                            <li><a href="#"><span class="id">28 Dec</span> <span class="name">Have a look at our new projects!</span> <span class="category">Modern design</span></a></li>
+                                            <li><a href="#"><span class="id">31 Sep</span> <span class="name">Decorating When You're Starting Out or Starting Over</span> <span class="category">Best of 2017</span></a></li>
+                                            <li><a href="#"><span class="id">22 Sep</span> <span class="name">The 3 Tricks that Quickly Became Rules</span> <span class="category">Tips for you</span></a></li>
+                                        </ul>
+                                    </div> <!--/search-result-items-->
+                                </div> <!--/search-results-->
+                            </div>
+            
+                            <!-- ==========  Login wrapper ========== -->
+            
+                            <div class="login-wrapper">
+                                <form>
+                                    <div class="h4">Sign in</div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="#forgotpassword" class="open-popup">Forgot password?</a>
+                                        <a href="#createaccount" class="open-popup">Don't have an account?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-block btn-main">Submit</button>
+                                </form>
+                            </div>
+            
+                            <!-- ==========  Cart wrapper ========== -->
+            
+                            <div class="cart-wrapper">
+                                <div class="checkout">
+                                    <div class="clearfix">
+            
+                                        <!--cart item-->
+            
+                                        <div class="row">
+            
+                                            <div class="cart-block cart-block-item clearfix">
+                                                <div class="image">
+                                                    <a href="product.html"><img src="assets/images/product-1.png" alt=""></a>
+                                                </div>
+                                                <div class="title">
+                                                    <div><a href="product.html">Green corner</a></div>
+                                                    <small>Green corner</small>
+                                                </div>
+                                                <div class="quantity">
+                                                    <input type="number" value="2" class="form-control form-quantity">
+                                                </div>
+                                                <div class="price">
+                                                    <span class="final">$ 1.998</span>
+                                                    <span class="discount">$ 2.666</span>
+                                                </div>
+                                                <!--delete-this-item-->
+                                                <span class="icon icon-cross icon-delete"></span>
+                                            </div>
+            
+                                            <!--cart item-->
+            
+                                            <div class="cart-block cart-block-item clearfix">
+                                                <div class="image">
+                                                    <a href="product.html"><img src="assets/images/product-2.png" alt=""></a>
+                                                </div>
+                                                <div class="title">
+                                                    <div><a href="product.html">Green corner</a></div>
+                                                    <small>Green corner</small>
+                                                </div>
+                                                <div class="quantity">
+                                                    <input type="number" value="2" class="form-control form-quantity">
+                                                </div>
+                                                <div class="price">
+                                                    <span class="final">$ 1.998</span>
+                                                    <span class="discount">$ 2.666</span>
+                                                </div>
+                                                <!--delete-this-item-->
+                                                <span class="icon icon-cross icon-delete"></span>
+                                            </div>
+            
+                                            <!--cart item-->
+            
+                                            <div class="cart-block cart-block-item clearfix">
+                                                <div class="image">
+                                                    <a href="product.html"><img src="assets/images/product-3.png" alt=""></a>
+                                                </div>
+                                                <div class="title">
+                                                    <div><a href="product.html">Green corner</a></div>
+                                                    <small>Green corner</small>
+                                                </div>
+                                                <div class="quantity">
+                                                    <input type="number" value="2" class="form-control form-quantity">
+                                                </div>
+                                                <div class="price">
+                                                    <span class="final">$ 1.998</span>
+                                                    <span class="discount">$ 2.666</span>
+                                                </div>
+                                                <!--delete-this-item-->
+                                                <span class="icon icon-cross icon-delete"></span>
+                                            </div>
+            
+                                            <!--cart item-->
+            
+                                            <div class="cart-block cart-block-item clearfix">
+                                                <div class="image">
+                                                    <a href="product.html"><img src="assets/images/product-4.png" alt=""></a>
+                                                </div>
+                                                <div class="title">
+                                                    <div><a href="product.html">Green corner</a></div>
+                                                    <small>Green corner</small>
+                                                </div>
+                                                <div class="quantity">
+                                                    <input type="number" value="2" class="form-control form-quantity">
+                                                </div>
+                                                <div class="price">
+                                                    <span class="final">$ 1.998</span>
+                                                    <span class="discount">$ 2.666</span>
+                                                </div>
+                                                <!--delete-this-item-->
+                                                <span class="icon icon-cross icon-delete"></span>
+                                            </div>
+                                        </div>
+            
+                                        <hr>
+            
+                                        <!--cart prices -->
+            
+                                        <div class="clearfix">
+                                            <div class="cart-block cart-block-footer clearfix">
+                                                <div>
+                                                    <strong>Discount 15%</strong>
+                                                </div>
+                                                <div>
+                                                    <span>$ 159,00</span>
+                                                </div>
+                                            </div>
+            
+                                            <div class="cart-block cart-block-footer clearfix">
+                                                <div>
+                                                    <strong>Shipping</strong>
+                                                </div>
+                                                <div>
+                                                    <span>$ 30,00</span>
+                                                </div>
+                                            </div>
+            
+                                            <div class="cart-block cart-block-footer clearfix">
+                                                <div>
+                                                    <strong>VAT</strong>
+                                                </div>
+                                                <div>
+                                                    <span>$ 59,00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <hr>
+            
+                                        <!--cart final price -->
+            
+                                        <div class="clearfix">
+                                            <div class="cart-block cart-block-footer clearfix">
+                                                <div>
+                                                    <strong>Total</strong>
+                                                </div>
+                                                <div>
+                                                    <div class="h4 title">$ 1259,00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+            
+                                        <!--cart navigation -->
+            
+                                        <div class="cart-block-buttons clearfix">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <a href="products-grid.html" class="btn btn-clean-dark">Continue shopping</a>
+                                                </div>
+                                                <div class="col-xs-6 text-right">
+                                                    <a href="checkout-1.html" class="btn btn-main"><span class="icon icon-cart"></span> Checkout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div> <!--/checkout-->
+                            </div> <!--/cart-wrapper-->
+                        </div> <!--/container-->
+                    </nav>
+            </div>
+
+        <!-- ========================  Main header ======================== -->
+
+        <section class="main-header main-header-blog" style="background-image:url(assets/images/gallery-1.jpg)">
+            <header>
+                <div class="container text-center">
+                    <h2 class="h2 title">Nossa história</h2>
+                    <p class="subtitle">O ínicio da nossa história</p>
+                </div>
+            </header>
+        </section>
+
+        <!-- ================== Intro section default ================== -->
+
+        <!-- ========================  Cards ======================== -->
+
+        <section class="cards">
+
+            <!-- === cards header === -->
+
+            <header>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8 text-center">
+                        <h2 class="title">Mais que uma loja, uma fábrica de sonhos</h2>
+                        <div class="text">
+                            <p>Sempre prezando pela qualidade e satisfação do cliente</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="row">
+
+                    <!-- === item === -->
+
+                    <div class="col-md-8">
+                        <figure>
+                            <figcaption style="background-image:url(assets/images/blog-7.jpg)">
+                                <img src="assets/images/blog-1.jpg" alt="" />
+                            </figcaption>
+                            <!-- <a href="#" class="btn btn-clean">Interior design</a> -->
+                        </figure>
+                    </div>
+
+                    <!-- === item === -->
+
+                    <div class="col-md-4">
+                        <figure>
+                            <figcaption style="background-image:url(assets/images/blog-2.jpg)">
+                                <img src="assets/images/blog-2.jpg" alt="" />
+                            </figcaption>
+                            <!-- <a href="#" class="btn btn-clean">3D Modeling</a> -->
+                        </figure>
+                    </div>
+
+                    <!-- === item === -->
+
+                    <div class="col-md-4">
+                        <figure>
+                            <figcaption style="background-image:url(assets/images/blog-3.jpg)">
+                                <img src="assets/images/blog-3.jpg" alt="" />
+                            </figcaption>
+                            <!-- <a href="#" class="btn btn-clean">Arhitect serives</a> -->
+                        </figure>
+                    </div>
+
+                    <!-- === item === -->
+
+                    <div class="col-md-4">
+                        <figure>
+                            <figcaption style="background-image:url(assets/images/blog-4.jpg)">
+                                <img src="assets/images/blog-4.jpg" alt="" />
+                            </figcaption>
+                            <!-- <a href="#" class="btn btn-clean">Manufacturing</a> -->
+                        </figure>
+                    </div>
+
+                    <!-- === item === -->
+
+                    <div class="col-md-4">
+                        <figure>
+                            <figcaption style="background-image:url(assets/images/blog-5.jpg)">
+                                <img src="assets/images/blog-5.jpg" alt="" />
+                            </figcaption>
+                            <!-- <a href="#" class="btn btn-clean">Planning</a> -->
+                        </figure>
+                    </div>
+
+                </div> <!--/row-->
+
+            </div> <!--/container-->
+        </section>
+
+        <!-- ================== Banner ================== -->
+
+        <section class="banner" style="background-image:url(assets/images/gallery-7.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8 text-center">
+                        <h1 class="h2 title">Nós amamos o nosso trabalho</h1>
+                        <div class="text">
+                            <p>
+                                Nossa história se inicia com uma pequena loja localizada na avenida presidente kenedy, não sabiamos ao certo como,
+                                mas ali seria o inicio do nosso sonho. Atender com qualidade e perfeição aos nossos mais diversos clientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================  History ======================== -->
+
+        <section class="history">
+            <div class="container">
+
+                <!-- === History header === -->
+
+                <header>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h1 class="h2 title">O ínicio de tudo</h1>
+                            <div class="text">
+                                <p>Nossa historia sempre foi acompanhada de muita dedicação e esforço, trabalhamos duro e nos esforçamos
+                                    desde o inicio para entregar produtos de excelente qualidade, sempre prezando pelo respeito mútuo 
+                                    entre nossos colaboradores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- === row item === -->
+
+                <div class="row row-block">
+                    <div class="col-md-5 history-image" style="background-image:url(assets/images/blog-3.jpg)">
+                        <div class="history-title">
+                            <h2 class="title">2019</h2>
+                            <p>O inicio</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7 history-desc">
+                        <div class="h5 title">Como foi o nosso inicio</div>
+                        <p>
+                            No início de nossa jornada, em 2019, a Komode Móveis e Decorados era apenas um sonho, 
+                            uma pequena semente de esperança plantada em solo fértil. Em uma modesta loja, começamos a escrever nossa história, 
+                            cheios de determinação e paixão pela criação de móveis que transformam ambientes em lares acolhedores.
+                        </p>
+                        <p>
+                            Com o tempo, aprendemos que cada peça de mobiliário que produzimos é mais do que apenas um objeto. 
+                            É uma expressão de nossa dedicação, um reflexo de nossa criatividade e um testemunho de nossa busca incessante pela qualidade. 
+                            Com cada detalhe meticulosamente pensado e cada estofado cuidadosamente escolhido, construímos não apenas móveis, mas sim, memórias.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- === row item === -->
+                <div class="row row-block">
+                    <div class="col-md-5 history-image" style="background-image:url(assets/images/blog-4.jpg)">
+                        <div class="history-title">
+                            <h2 class="title">2021</h2>
+                            <p>A pandemia</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7 history-desc">
+                        <div class="h5 title">Com luta superamos todas as dificuldades</div>
+                        <p>
+                            Com a chegada da pandemia, enfrentamos tempos difíceis. O país vivia uma instabilidade financeira
+                            e a incerteza sobre o futuro da Komode era algo recorrente. Mesmo assim não desistimos do nosso sonho
+                            e persistimos em continuar transformando casas em lares. Decidimos fechar nossa primeira loja e nos dedicarmos 
+                            inteiramente na nossa linha de produção, era algo ambicioso mas sabiamos da nossa dedicação e logo os frutos
+                            pelo nosso árduo trabalho seriam colhidos. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- === row item === -->
+                <div class="row row-block">
+                    <div class="col-md-5 history-image" style="background-image:url(assets/images/blog-5.jpg)">
+                        <div class="history-title">
+                            <h2 class="title">2022</h2>
+                            <p>A fábrica</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7 history-desc">
+                        <div class="h5 title">O amor pelo que fazemos nos fez crescer mais e mais</div>
+                        
+                        <p>
+                            Após estabelecer nossa presença no mercado, decidimos dar um passo audacioso e inaugurar nossa primeira fábrica. 
+                            Foi um desafio e tanto, mas com determinação, trabalho árduo e uma equipe dedicada, superamos cada obstáculo no caminho.
+                             Hoje, a fábrica Komode Móveis e Decorados é o coração de nossa produção, garantindo qualidade e 
+                            inovação em cada peça que criamos. Conquistamos mais um capítulo emocionante em nossa jornada, com muitos mais por vir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- === row item === -->
+                <div class="row row-block">
+                    <div class="col-md-5 history-image" style="background-image:url(assets/images/blog-6.jpg)">
+                        <div class="history-title">
+                            <h2 class="title">2023</h2>
+                            <p>Hoje</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7 history-desc">
+                        <div class="h5 title">Sempre em busca da melhoria contínua</div>
+                        <p>
+                            Hoje, a pequena loja que não existe mais deu lugar a um legado de excelência. 
+                            Continuamos a crescer, a evoluir e a nos inspirar na jornada que começou com um sonho simples. 
+                            Agradecemos a todos os nossos clientes e colaboradores que tornaram possível esta incrível trajetória. 
+                            Juntos, estamos construindo não apenas móveis, mas sim, histórias de conforto, beleza e inspiração para o lar.
+                        </p>
+                        <p>
+                            Obrigado por fazer parte dessa jornada conosco. 
+                            Estamos ansiosos para continuar a transformar casas em lares, e sonhos em realidade, 
+                            pois a Komode Móveis e Decorados está sempre pronta a atender e entregar o melhor para nossos clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================  Banner ======================== -->
+
+        <section class="banner" style="background-image:url(assets/images/gallery-2.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10 text-center">
+                        <h2 class="title">Nossa história</h2>
+                        <p>
+                            Acreditamos na criatividade como uma das principais forças do progresso. 
+                            Com essa ideia, montamos uma linha de móveis excepcionais para os amantes de móveis em todos os lugares.
+
+
+                        </p>
+                        <p>
+                            Você finalmente chegou a este momento em sua vida - você 
+                            comprou sua primeira casa ou se mudou para seu próprio apartamento. Na Komode Móveis e Decorados, 
+                            estamos aqui para tornar esse momento especial ainda mais memorável, 
+                            oferecendo uma gama de móveis e Decorados excepcionais que transformarão sua casa em um lar acolhedor.
+                        </p>
+                        <p><a href="#" class="btn btn-clean">Veja nossa história completa</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cards">
+
+            <!-- === cards header === -->
+
+            <header>
+                <div class="row">
+                    
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="row">
+                </div> 
+
+            </div> 
+        </section>
+        
+        <div >        <!-- ================== Footer  ================== -->
+
+            <footer>
+                <div class="container">
+    
+                    <!--footer showroom-->
+                    <div class="footer-showroom">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>Visite nosso Show Room</h2>
+                                <p>Av. Dr Délio Guaraná nº000 São João de Meriti, RJ</p>
+                                <p>Seg - De: 08  as: 18 pm &nbsp; &nbsp; | &nbsp; &nbsp; Sáb: 08 am - 12 pm</p>
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <a href="https://www.google.com/maps/place/AL+M%C3%B3veis+e+Decorados/@-22.7891776,-43.3995508,17z/data=!4m20!1m13!4m12!1m4!2m2!1d-43.3984511!2d-22.7912906!4e1!1m6!1m2!1s0x996569cf804ddb:0xbf605c5e51e6ef5c!2sal+moveis!2m2!1d-43.3966233!2d-22.7869932!3m5!1s0x996569cf804ddb:0xbf605c5e51e6ef5c!8m2!3d-22.7869932!4d-43.3966233!16s%2Fg%2F11fltq5wrn?entry=ttu" target="_blank"  class="btn btn-clean"><span class="icon icon-map-marker"></span> Encontre-nos</a>
+                                <div class="call-us h4"><span class="icon icon-phone-handset"></span> (21)2100 0000</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!--footer links-->
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-2">
+                                <h5>Encontre aqui</h5>
+                                <ul>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="estoque.html">Produtos</a></li>
+                                    <li><a href="categorias.html">Categorias</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-sm-4 col-md-2">
+                                <h5>Nossa empresa</h5>
+                                <ul>
+                                    <li><a href="sobre.html">Sobre</a></li>
+                                    <li><a href=https://www.instagram.com/komodemd/>Blog</a></li>
+                                    <li><a href="contato.html">Contato</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <h5>Entre em nossos grupos e receba ofertas diárias</h5>
+                                <p><i>Adicione seu endereço de e-mail para receber promoções.</i></p>
+                                <div class="form-group form-newsletter">
+                                    <input class="form-control" type="text" name="email" value="" placeholder="Endereço de email">
+                                    <input type="submit" class="btn btn-clean btn-sm" value="Enviar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!--footer social-->
+    
+                    <div class="footer-social">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                 <a href="#">Mapa do site</a> &nbsp; | &nbsp; <a href="#">Politica de privacidade</a>
+                            </div>
+                            <div class="col-sm-6 links">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/KomodeMoveis"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.facebook.com/KomodeMoveis"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/KomodeMoveis"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=https://www.instagram.com/komodemd/><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href=https://www.instagram.com/komodemd/><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-105330313-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-105330313-1');
+    </script>
+    </div>
+
+    </div> <!--/wrapper-->
+
+    <!--JS bundle -->
+    <script src="js/bundle.min.js"></script>
+</body>
+</html>
